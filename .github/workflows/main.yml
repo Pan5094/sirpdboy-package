@@ -1,0 +1,17 @@
+
+name: Sync Fork
+
+on:
+  push:
+  schedule:
+    - cron: '* */4 * * *'
+
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TG908/fork-sync@v1.6.3
+        with:
+          owner: SirPdboy
+          head: main
+          base: main
